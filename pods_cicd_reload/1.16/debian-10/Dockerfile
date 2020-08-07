@@ -19,8 +19,7 @@ RUN chmod g+rwX /opt/bitnami
 
 ENV BITNAMI_APP_NAME="kubectl" \
     BITNAMI_IMAGE_VERSION="1.16.13-debian-10-r0" \
-    PATH="/opt/bitnami/kubectl/bin:$PATH" \
-    
+    PATH="/opt/bitnami/kubectl/bin:$PATH"
 
 USER 1001
 ENTRYPOINT [ "kubectl" ]
