@@ -8,7 +8,7 @@ ENV HOME="/" \
 
 COPY prebuildfs /
 # Install required system packages and dependencies
-RUN install_packages ca-certificates curl gzip procps tar wget git
+RUN install_packages ca-certificates curl bash gzip procps tar wget git
 RUN wget -nc -P /tmp/bitnami/pkg/cache/ https://downloads.bitnami.com/files/stacksmith/kubectl-1.16.13-0-linux-amd64-debian-10.tar.gz && \
     echo "722c36ee5a9319cd91efcca66610a061822f5e2e3e0f5b9ab50be92657c01f85  /tmp/bitnami/pkg/cache/kubectl-1.16.13-0-linux-amd64-debian-10.tar.gz" | sha256sum -c - && \
     tar -zxf /tmp/bitnami/pkg/cache/kubectl-1.16.13-0-linux-amd64-debian-10.tar.gz -P --transform 's|^[^/]*/files|/opt/bitnami|' --wildcards '*/files' && \
